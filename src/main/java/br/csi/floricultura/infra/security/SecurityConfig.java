@@ -33,27 +33,27 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                                 //endpoint de login - todos
                                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                                //endpoint de registro de usuario]
-                                .requestMatchers(HttpMethod.POST, "/usuarios/registrar").permitAll()
+                                //endpoint de registro de pessoa
+                                .requestMatchers(HttpMethod.POST, "/pessoa/registrar").permitAll()
                                 //documentaçao do swagger
                                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 
                                 //deletes - admin
                                 .requestMatchers(HttpMethod.DELETE).hasAuthority("ROLE_ADMIN")
 
-                                //post e put em autores e livros - admin
-//                        .requestMatchers(HttpMethod.POST, "/autores/**", "/livros/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.POST, "/autores/**", "/livros/**").hasAuthority("ROLE_ADMIN")
-//                        .requestMatchers(HttpMethod.PUT, "/autores/**", "/livros/**").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.PUT, "/autores/**", "/livros/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_USUARIO")
+                                //post e put em pedido e produto - admin
+//                        .requestMatchers(HttpMethod.POST, "/pedido/**", "/produto/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.POST, "/pedido/**", "/produto/**").hasAuthority("ROLE_ADMIN")
+//                        .requestMatchers(HttpMethod.PUT, "/pedido/**", "/produto/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.PUT, "/pedido/**", "/produto/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_USUARIO")
 
-                                //outras requisiçoes - usuario autenticado
+                                //outras requisiçoes - pessoa autenticado
                                 .anyRequest().authenticated()
                 )
                 //executar filtro de token antes do filtro de autenticação do spring
 //                .addFilterBefore(this.filtroToken, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
-                .build(); // sessao nao salvs estado do usuario, apenas gera token
+                .build(); // sessao nao salvs estado da pessoa, apenas gera token
     }
 
     @Bean
