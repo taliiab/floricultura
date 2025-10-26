@@ -1,0 +1,13 @@
+package br.csi.floricultura.model.pedido;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface PedidoProdutoRepository extends JpaRepository<PedidoProduto, Long> {
+
+    // Busca todos os produtos de um pedido
+    List<PedidoProduto> findPedidoProdutoByPedidoId(Long pedidoId);
+
+
+}
