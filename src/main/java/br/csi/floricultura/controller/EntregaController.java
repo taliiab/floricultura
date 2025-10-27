@@ -38,7 +38,7 @@ public class EntregaController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Entrega.class))),
             @ApiResponse(responseCode = "404", description = "Entrega não encontrada")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/buscar/{id}")
     public Entrega getEntregaPorId(@Parameter(description = "Id da entrega a ser buscada") @PathVariable Long id) {
         return this.service.getEntrega(id);
     }
@@ -50,20 +50,20 @@ public class EntregaController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Entrega.class))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos fornecidos")
     })
-    @PostMapping
+    @PostMapping("/criar")
     public void salvar(@RequestBody Entrega entrega) {
         this.service.salvar(entrega);
     }
 
     /* http://localhost:8080/floricultura/entrega */
-    @PutMapping
+    @PutMapping("/atualizar")
     @Operation(summary = "Atualizar uma entrega", description = "Atualiza os dados de uma entrega já cadastrada com base no ID")
     public void atualizar(@RequestBody Entrega entrega) {
         this.service.atualizar(entrega);
     }
 
     /* http://localhost:8080/floricultura/entrega/{id} */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir uma entrega por ID", description = "Remove uma entrega do banco de acordo com o ID informado")
     public void deletar(@PathVariable Long id) {
         this.service.excluir(id);

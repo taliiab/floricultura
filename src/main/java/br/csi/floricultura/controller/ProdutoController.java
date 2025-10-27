@@ -33,7 +33,7 @@ public class ProdutoController {
         return ResponseEntity.ok(produtos);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/buscar/id/{id}")
     @Operation(summary = "Buscar produto por ID")
     public ResponseEntity<Produto> getProdutoPorId(@PathVariable Long id) {
         Produto produto = service.getProduto(id);
@@ -41,7 +41,7 @@ public class ProdutoController {
         return ResponseEntity.ok(produto);
     }
 
-    @GetMapping("/nome/{nome}")
+    @GetMapping("/listar/nome/{nome}")
     @Operation(summary = "Listar produtos por nome")
     public ResponseEntity<List<Produto>> listarPorNome(@PathVariable String nome) {
         List<Produto> produtos = service.listarPorNome(nome);
@@ -49,7 +49,7 @@ public class ProdutoController {
         return ResponseEntity.ok(produtos);
     }
 
-    @PostMapping
+    @PostMapping("/criar")
     @Operation(summary = "Criar um novo produto")
     public ResponseEntity<Produto> salvar(@RequestBody Produto produto, UriComponentsBuilder uriBuilder) {
         Produto p = service.salvar(produto);
@@ -57,14 +57,14 @@ public class ProdutoController {
         return ResponseEntity.created(uri).body(p);
     }
 
-    @PutMapping
+    @PutMapping("/atualizar/{id}")
     @Operation(summary = "Atualizar um produto")
     public ResponseEntity<Produto> atualizar(@RequestBody Produto produto) {
         Produto p = service.atualizar(produto);
         return ResponseEntity.ok(p);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir um produto por ID")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         service.excluir(id);

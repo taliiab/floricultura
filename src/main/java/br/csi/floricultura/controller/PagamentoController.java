@@ -37,7 +37,7 @@ public class PagamentoController {
     }
 
     /* http://localhost:8080/floricultura/pagamento/{id} */
-    @GetMapping("/{id}")
+    @GetMapping("/buscar/{id}")
     @Operation(summary = "Buscar pagamento por ID", description = "Retorna um pagamento específico com base no ID informado")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Pagamento encontrado",
@@ -52,7 +52,7 @@ public class PagamentoController {
     }
 
     /* http://localhost:8080/floricultura/pagamento */
-    @PostMapping
+    @PostMapping("/criar")
     @Operation(summary = "Criar um novo pagamento", description = "Cria um novo pagamento no banco de dados")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Pagamento criado com sucesso",
@@ -66,8 +66,8 @@ public class PagamentoController {
     }
 
     /* http://localhost:8080/floricultura/pagamento */
-    @PutMapping
-    @Operation(summary = "Atualizar um pagamento", description = "Atualiza os dados de um pagamento existente com base no ID")
+    @PutMapping("/atualizar/{id}")
+    @Operation(summary = "Atualizar um pagamento po ID", description = "Atualiza os dados de um pagamento existente com base no ID")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Pagamento atualizado com sucesso",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Pagamento.class))),
@@ -80,7 +80,7 @@ public class PagamentoController {
     }
 
     /* http://localhost:8080/floricultura/pagamento/{id} */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir um pagamento por ID", description = "Remove permanentemente um pagamento do banco de dados")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Pagamento excluído com sucesso"),

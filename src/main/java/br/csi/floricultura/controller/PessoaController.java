@@ -32,7 +32,7 @@ public class PessoaController {
             @ApiResponse(responseCode = "201", description = "Pessoa criada com sucesso"),
             @ApiResponse(responseCode = "400", description = "Dados inválidos fornecidos")
     })
-    @PostMapping("/salvar")
+    @PostMapping("/novo") // alterado de /salvar para /novo para evitar conflito
     public ResponseEntity<DadosPessoa> salvar(@Valid @RequestBody Pessoa pessoa, UriComponentsBuilder uriBuilder) {
         Pessoa pessoaSalva = service.salvar(pessoa);
         DadosPessoa dadosPessoa = new DadosPessoa(pessoaSalva);
@@ -55,7 +55,7 @@ public class PessoaController {
             @ApiResponse(responseCode = "200", description = "Pessoa encontrada com sucesso"),
             @ApiResponse(responseCode = "404", description = "Pessoa não encontrada")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/buscar/{id}")
     public ResponseEntity<DadosPessoa> buscarPorId(@PathVariable Long id) {
         Pessoa pessoa = service.getPessoa(id);
         if (pessoa == null) return ResponseEntity.notFound().build();
@@ -63,7 +63,7 @@ public class PessoaController {
     }
 
     @Operation(summary = "Atualiza uma pessoa por ID")
-    @PutMapping("/{id}")
+    @PutMapping("/atualizar/{id}")
     public ResponseEntity<DadosPessoa> atualizar(@PathVariable Long id, @Valid @RequestBody Pessoa pessoa) {
         pessoa.setId(id);
         service.atualizar(pessoa);
@@ -71,14 +71,14 @@ public class PessoaController {
     }
 
     @Operation(summary = "Excluir uma pessoa por ID")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/excluir/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Long id) {
         service.excluir(id);
         return ResponseEntity.noContent().build();
     }
 
     @Operation(summary = "Busca uma pessoa por CPF")
-    @GetMapping("/cpf/{cpf}")
+    @GetMapping("/buscar/cpf/{cpf}")
     public ResponseEntity<DadosPessoa> buscarPorCpf(@PathVariable String cpf) {
         Pessoa pessoa = service.getPessoaPorCpf(cpf);
         if (pessoa == null) return ResponseEntity.notFound().build();
@@ -86,7 +86,7 @@ public class PessoaController {
     }
 
     @Operation(summary = "Busca uma pessoa por email")
-    @GetMapping("/email/{email}")
+    @GetMapping("/buscar/email/{email}")
     public ResponseEntity<DadosPessoa> buscarPorEmail(@PathVariable String email) {
         Pessoa pessoa = service.getPessoaPorEmail(email);
         if (pessoa == null) return ResponseEntity.notFound().build();

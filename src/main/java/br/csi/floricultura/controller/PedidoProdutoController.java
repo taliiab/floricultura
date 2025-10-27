@@ -38,7 +38,7 @@ public class PedidoProdutoController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = PedidoProduto.class))),
             @ApiResponse(responseCode = "404", description = "Item de pedido não encontrado")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/buscar/{id}")
     public PedidoProduto getPedidoProdutoPorId(@Parameter(description = "Id do item de pedido a ser buscado") @PathVariable Long id) {
         return this.service.getPedidoProduto(id);
     }
@@ -57,20 +57,20 @@ public class PedidoProdutoController {
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = PedidoProduto.class))),
             @ApiResponse(responseCode = "400", description = "Dados inválidos fornecidos")
     })
-    @PostMapping
+    @PostMapping("/criar")
     public void salvar(@RequestBody PedidoProduto pedidoProduto) {
         this.service.salvar(pedidoProduto);
     }
 
     /* http://localhost:8080/floricultura/pedido-produto */
-    @PutMapping
+    @PutMapping("atualizar")
     @Operation(summary = "Atualizar um item de pedido", description = "Atualiza os dados de um item de pedido existente")
     public void atualizar(@RequestBody PedidoProduto pedidoProduto) {
         this.service.atualizar(pedidoProduto);
     }
 
     /* http://localhost:8080/floricultura/pedido-produto/{id} */
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir um item de pedido por ID", description = "Remove um item de pedido do banco de acordo com o ID informado")
     public void deletar(@PathVariable Long id) {
         this.service.excluir(id);

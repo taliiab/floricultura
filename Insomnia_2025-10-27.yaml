@@ -1,0 +1,1150 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1758048250735
+  modified: 1758048250735
+  description: ""
+collection:
+  - name: Floricultura API
+    meta:
+      id: fld_655c69398d1247739c0ae2e3f444cd38
+      created: 1761576749745
+      modified: 1761579230227
+      sortKey: -1761576749745
+      description: ""
+    children:
+      - url: http://localhost:8081/floricultura/login
+        name: /login
+        meta:
+          id: req_448d7e46c09e490b8498a48495ef124a
+          created: 1761576962910
+          modified: 1761584725067
+          isPrivate: false
+          description: ""
+          sortKey: -1761578932048
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "email": "admin@floricultura.com",
+              "senha": "admin"
+            }
+        parameters:
+          - id: pair_e5135ac56d4742799f7025bcd5ad077c
+            name: ""
+            value: ""
+            description: ""
+            disabled: false
+          - id: pair_68dc0c11e0b14e60beca90371e17a26c
+            name: ""
+            value: ""
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U4gyvsnHioU-s
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/buscar/1
+        name: /pessoa/buscar/{id}
+        meta:
+          id: req_5ec7d9b22605417198304fb5851ad4da
+          created: 1761577324002
+          modified: 1761583314457
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931948
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/listar
+        name: /pessoa/listar
+        meta:
+          id: req_ee7b0e072d5745ea82244c280bf04d43
+          created: 1761577635429
+          modified: 1761583093732
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931848
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_fbe6057967bf4ff19f4c45d6761a25a8
+          - id: pair_455ada84f09d41efa963489552f7e812
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/novo
+        name: /pessoa/novo
+        meta:
+          id: req_1c47ce43914245f7b4cdecf003bbc1e2
+          created: 1761579253915
+          modified: 1761581416147
+          isPrivate: false
+          description: ""
+          sortKey: -1761578932148
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "João",
+              "cpf": "123.456.789-00",
+              "email": "joao@email.com",
+              "senha": "123456",
+              "permissao": "ROLE_USER",
+              "ativo": true,
+              "endereco": {
+                "cep": "97015-010",
+                "rua": "Rua Central",
+                "numero": "12",
+                "complemento": "Casa"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_a58795ec513e4fc18140b5ae909c2f22
+          - id: pair_1765da04e2bb418eace7a2da6dcaecb3
+            name: Bearer
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzYxNTg2NDQyfQ.Kh_79h61VomRt2oxw8ReAZ8yudLEIies_GIkRa5r3XE
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzYxNTg2NDQyfQ.Kh_79h61VomRt2oxw8ReAZ8yudLEIies_GIkRa5r3XE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/excluir/12
+        name: /pessoa/excluir/{id}
+        meta:
+          id: req_0454a9040995452e967b06b33c1e52b0
+          created: 1761581503864
+          modified: 1761581652329
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/atualizar/3
+        name: /pessoa/atualizar/{id}
+        meta:
+          id: req_965d33da7c004304a17c2da099c3bf94
+          created: 1761581714671
+          modified: 1761581851708
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931923
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "João da Silva",
+              "cpf": "123.456.789-00",
+              "email": "joaosilva@email.com",
+              "senha": "123456",
+              "permissao": "ROLE_USER",
+              "ativo": true,
+              "endereco": {
+                "cep": "97015-010",
+                "rua": "Rua Central",
+                "numero": "15",
+                "complemento": "Apartamento 201"
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/buscar/email/luciana.santos@email.com
+        name: /pessoa/buscar/email/{email}
+        meta:
+          id: req_5f30f59255bb4687806a0e7a428915b1
+          created: 1761581895581
+          modified: 1761581927438
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931935.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pessoa/buscar/cpf/222.333.444-55
+        name: /pessoa/buscar/cpf/{cpf}
+        meta:
+          id: req_e62b8d2eaf65403eb4e8c2af81968639
+          created: 1761581947238
+          modified: 1761581977725
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931929.25
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/atualizar/3
+        name: /produto/atualizar/{id}
+        meta:
+          id: req_f6e7c71db64249ebaa11f85ce4938087
+          created: 1761582650889
+          modified: 1761582983307
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931910.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	  "id": 3,
+              "nome": "Buquê de Rosas Vermelhas",
+              "descricao": "Buquê com 12 rosas vermelhas frescas",
+              "preco": 120.50,
+              "estoque": 30
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/criar
+        name: /produto/criar
+        meta:
+          id: req_a7d996d1daa145258328419534526190
+          created: 1761583022376
+          modified: 1761583689424
+          isPrivate: false
+          description: ""
+          sortKey: -1761578932098
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "nome": "Buquê de Rosas Vermelhas",
+              "descricao": "Buquê com 12 rosas vermelhas frescas",
+              "preco": 120.50,
+              "estoque": 30
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_a58795ec513e4fc18140b5ae909c2f22
+          - id: pair_1765da04e2bb418eace7a2da6dcaecb3
+            name: Bearer
+            value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzYxNTg2NDQyfQ.Kh_79h61VomRt2oxw8ReAZ8yudLEIies_GIkRa5r3XE
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzYxNTg2NDQyfQ.Kh_79h61VomRt2oxw8ReAZ8yudLEIies_GIkRa5r3XE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/listar
+        name: /produto/listar
+        meta:
+          id: req_94cf977723ff49bf924f105689ce16f0
+          created: 1761583107038
+          modified: 1761583133173
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931798
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_fbe6057967bf4ff19f4c45d6761a25a8
+          - id: pair_455ada84f09d41efa963489552f7e812
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/listar/nome/Jasmin
+        name: /produto/listar/nome/{nome}
+        meta:
+          id: req_df10cf04bc074b75801c35fa4d4fb879
+          created: 1761583177098
+          modified: 1761583220908
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931748
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_fbe6057967bf4ff19f4c45d6761a25a8
+          - id: pair_455ada84f09d41efa963489552f7e812
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/buscar/id/9
+        name: /produto/listar/id/{id}
+        meta:
+          id: req_515f6683a49340a299787629d31b242e
+          created: 1761583258388
+          modified: 1761583545554
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931773
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_fbe6057967bf4ff19f4c45d6761a25a8
+          - id: pair_455ada84f09d41efa963489552f7e812
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/produto/excluir/11
+        name: /produto/excluir/{id}
+        meta:
+          id: req_42ec02465a6b4b189d19bb5707c0b866
+          created: 1761583569332
+          modified: 1761583703504
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931873
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTg0NDcwfQ.N3JX3qDbQEv4w0oaPf3n74fP-YEXx-U\
+              4gyvsnHioU-s"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/
+        name: /pedido/atualizar
+        meta:
+          id: req_47e26dac9a1f4c5e8b80b6aef5b3cdf4
+          created: 1761583938954
+          modified: 1761589131154
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931904.25
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "id": 1,
+              "status": "EM_PROCESSAMENTO",
+              "valorTotal": 150.0,
+              "dataPedido": "2025-10-27T13:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_8337211e5d464a7d8f94b380df69d303
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido/criar
+        name: /pedido/criar
+        meta:
+          id: req_e384de8afafe488fbafd38ba7f5f64b5
+          created: 1761585256395
+          modified: 1761588332435
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931901.125
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "usuario_id": 4,
+              "status": "Pendente",
+              "valorTotal": 150.0,
+              "dataPedido": "2025-10-27T13:00:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_8337211e5d464a7d8f94b380df69d303
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido/listar
+        name: /pedido/listar
+        meta:
+          id: req_6701150e98754385b8650f9148bdc92e
+          created: 1761586181014
+          modified: 1761589455310
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931899.5625
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido/buscar/3
+        name: /pedido/buscar/{id}
+        meta:
+          id: req_508c67ea5d674e749705be74af9b6a02
+          created: 1761586222270
+          modified: 1761586230678
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.7812
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido/excluir/11
+        name: /pedido/excluir/{id}
+        meta:
+          id: req_b41b98e44de74e1aaec54fe5ddd261a3
+          created: 1761586254826
+          modified: 1761586320627
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.3906
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido-produto/pedido/2
+        name: /pedido-produto/pedido/{pedidoId}
+        meta:
+          id: req_58641ff5bc014b16bb2d9b3e2adb8cb2
+          created: 1761587794024
+          modified: 1761587819051
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.586
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido-produto/listar
+        name: /pedido-produto/listar
+        meta:
+          id: req_de37f52e6a754781a46a82eddc9108b1
+          created: 1761587841291
+          modified: 1761587850829
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.4883
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido-produto/buscar/1
+        name: /pedido-produto/buscar/{id}
+        meta:
+          id: req_a33dfdbb3de641dfaa1c4e658cb4cb3a
+          created: 1761587904755
+          modified: 1761587916890
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.4395
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pagamento/criar
+        name: /pagamento/criar
+        meta:
+          id: req_54d8ff56b5444b9ab73de51a6f296d05
+          created: 1761587989130
+          modified: 1761588563850
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931900.3438
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {
+              "pedido_id": 13,
+              "status": "Pendente"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_8337211e5d464a7d8f94b380df69d303
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pedido-produto/excluir/3
+        name: /pedido-produto/excluir/{id}
+        meta:
+          id: req_bea543c8fea74e3ba0122447acb612d5
+          created: 1761588232450
+          modified: 1761588260728
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.1953
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pagamento/excluir/5
+        name: /pagamento/excluir/{id}
+        meta:
+          id: req_986b8bc3d7d940418652cee13b81ff42
+          created: 1761589377202
+          modified: 1761589388005
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.293
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pagamento/status/Pago
+        name: /pagamento/status/{status}
+        meta:
+          id: req_6bbdcb4ad36449168eabed0eaa48efe2
+          created: 1761589474983
+          modified: 1761589484851
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931899.1719
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pagamento/listar
+        name: /pagamento/listar
+        meta:
+          id: req_b24da86fef3f4bd294ad969e13d0e665
+          created: 1761589503515
+          modified: 1761589530482
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.9766
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/pagamento/buscar/1
+        name: /pagamento/buscar/{id}
+        meta:
+          id: req_a2d0a6c665cb462aae6c00407413423e
+          created: 1761589538268
+          modified: 1761589546977
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931898.879
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTkxOTI3fQ.G9n-1NBaNel4m7FXZWG5cAZnh6dHd_m\
+              QA1cD2yzWQ0o"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/entrega/excluir/5
+        name: /entrega/excluir/{id}
+        meta:
+          id: req_863a2717705942afa8399d9837d4c18b
+          created: 1761590637166
+          modified: 1761590768357
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931905.8125
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTk3MzU0fQ.RYcA_pSyJ-_-UTdAKzC1S0mdTpFRPuE\
+              oZJ6CPYoVgS8"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/entrega/listar
+        name: /entrega/listar
+        meta:
+          id: req_6ce20da5de574487b4e4cd5d42d01e73
+          created: 1761590800500
+          modified: 1761590812899
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931905.0312
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTk3MzU0fQ.RYcA_pSyJ-_-UTdAKzC1S0mdTpFRPuE\
+              oZJ6CPYoVgS8"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8081/floricultura/entrega/buscar/4
+        name: /entrega/buscar/{id}
+        meta:
+          id: req_f7201e68c08444999c7190bd532b41c4
+          created: 1761590858922
+          modified: 1761590866909
+          isPrivate: false
+          description: ""
+          sortKey: -1761578931904.6406
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.2
+            id: pair_4cfb337f60f3451fa56209a681c7a448
+          - id: pair_6563a8acc0394270bfc716be61ac5899
+            name: Authorization
+            value: " Bearer
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgRmxvcmljdWx0\
+              dXJhIiwic3ViIjoiYWRtaW5AZmxvcmljdWx0dXJhLmNvbSIsIlJPTEUiOiJST0xFX\
+              0FETUlOIiwiZXhwIjoxNzYxNTk3MzU0fQ.RYcA_pSyJ-_-UTdAKzC1S0mdTpFRPuE\
+              oZJ6CPYoVgS8"
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1758048271901
+    modified: 1758048271901
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1758048271893
+    modified: 1758048271893
+    isPrivate: false
