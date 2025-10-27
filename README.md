@@ -92,6 +92,8 @@ O sistema desenvolvido serve para **gerenciar vendas de uma floricultura**, perm
 ```bash
 curl http://localhost:8081/floricultura/v3/api-docs -o openapi.yml
 ```
+- 🔗 **Coleção de Endpoints:** `https://github.com/taliiab/floricultura/blob/main/Insomnia_2025-10-27.yaml`
+
 
 ## 👩‍💻 Dev
 Nome: Talia Bosi
