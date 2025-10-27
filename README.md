@@ -91,3 +91,9 @@ O sistema desenvolvido serve para **gerenciar vendas de uma floricultura**, perm
 - Baixar o YAML da API:
 ```bash
 curl http://localhost:8081/floricultura/v3/api-docs -o openapi.yml
+```
+
+## 👩‍💻 Dev
+Nome: Talia Bosi
+
+Disciplina: Programação Orientada a Objetos Web 2
