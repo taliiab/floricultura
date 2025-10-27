@@ -77,6 +77,12 @@ O sistema desenvolvido serve para **gerenciar vendas de uma floricultura**, perm
 
 ## 🗂️ Modelos 
 
+### Diagrama UML
+<img width="600" alt="floricultura@localhost" src="https://github.com/user-attachments/assets/87d1aca9-7029-4e85-8c51-b732ededb1eb" />
+
+### Diagram ER
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/08e8de07-e6ec-4ca0-bda9-7b25175d8663" />
+
 
 
 ## 📄 Documentação da API
