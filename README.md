@@ -88,7 +88,7 @@ O sistema desenvolvido serve para **gerenciar vendas de uma floricultura**, perm
 ## 📄 Documentação da API
 
 - 🔗 **URL do Swagger UI:** `http://localhost:8081/Floricultura/swagger-ui.html`
-- Baixar o YAML da API:
+- **Baixar o YAML da API:**
 ```bash
 curl http://localhost:8081/floricultura/v3/api-docs -o openapi.yml
 ```
