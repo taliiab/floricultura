@@ -15,12 +15,10 @@ public class PedidoProdutoService {
         this.repository = repository;
     }
 
-    /** Salva um novo PedidoProduto */
     public PedidoProduto salvar(PedidoProduto pedidoProduto) {
         return repository.save(pedidoProduto);
     }
 
-    /** Atualiza um PedidoProduto existente */
     public PedidoProduto atualizar(PedidoProduto pedidoProduto) {
         if (pedidoProduto.getId() == null || !repository.existsById(pedidoProduto.getId())) {
             throw new RuntimeException("PedidoProduto não encontrado para atualização");
@@ -28,7 +26,6 @@ public class PedidoProdutoService {
         return repository.save(pedidoProduto);
     }
 
-    /** Exclui um PedidoProduto pelo ID */
     public void excluir(Long id) {
         if (!repository.existsById(id)) {
             throw new RuntimeException("PedidoProduto não encontrado para exclusão");
@@ -36,17 +33,14 @@ public class PedidoProdutoService {
         repository.deleteById(id);
     }
 
-    /** Lista todos os PedidoProduto */
     public List<PedidoProduto> listar() {
         return repository.findAll();
     }
 
-    /** Busca um PedidoProduto pelo ID */
     public PedidoProduto getPedidoProduto(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    /** Lista todos os produtos de um pedido específico */
     public List<PedidoProduto> listarPorPedido(Long pedidoId) {
         return repository.findPedidoProdutoByPedidoId(pedidoId);
     }

@@ -18,14 +18,13 @@ public class TokenServiceJWT {
     @Value("${jwt.secret}")
     private String KEY;
 
-    // Gera token JWT com subject e role
     public String gerarToken(Pessoa user) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(KEY);
             return JWT.create()
                     .withIssuer("API Floricultura")
-                    .withSubject(user.getEmail()) // usar email ou nome
-                    .withClaim("ROLE", user.getPermissao()) // ROLE_ADMIN, ROLE_USER etc
+                    .withSubject(user.getEmail())
+                    .withClaim("ROLE", user.getPermissao())
                     .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
         } catch (JWTCreationException e) {
@@ -37,7 +36,6 @@ public class TokenServiceJWT {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
 
-    // Retorna o usuário (subject) do token
     public String getSubject(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(KEY);
@@ -51,7 +49,6 @@ public class TokenServiceJWT {
         }
     }
 
-    // Retorna a role do token
     public String getRole(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(KEY);

@@ -22,7 +22,7 @@ public class Pedido {
     private Long id;
 
     @NonNull
-    @ManyToOne(fetch = FetchType.EAGER) // garante que o usuário será carregado junto
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario_id")
     private Pessoa pessoa;
 
@@ -33,7 +33,7 @@ public class Pedido {
     private BigDecimal valorTotal;
 
     @NonNull
-    private String status; // Ex: "Pendente", "Processando", "Enviado", "Entregue", "Cancelado"
+    private String status; //ex: "Pendente", "Processando", "Enviado", "Entregue", "Cancelado"
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<PedidoProduto> produtos;

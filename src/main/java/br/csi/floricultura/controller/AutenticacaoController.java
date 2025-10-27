@@ -47,10 +47,8 @@ public class AutenticacaoController {
 
             Authentication authentication = manager.authenticate(authenticationToken);
 
-            // Recupera o usuário autenticado
             Pessoa pessoa = (Pessoa) authentication.getPrincipal();
 
-            // Gera token JWT
             String token = tokenService.gerarToken(pessoa);
 
             return ResponseEntity.ok(new DadosToken(token));
@@ -65,7 +63,6 @@ public class AutenticacaoController {
         }
     }
 
-    // DTOs para request/response
     public static record DadosAutenticacao(String email, String senha) {}
     public static record DadosToken(String token) {}
 }

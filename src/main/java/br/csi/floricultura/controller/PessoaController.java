@@ -32,7 +32,7 @@ public class PessoaController {
             @ApiResponse(responseCode = "201", description = "Pessoa criada com sucesso"),
             @ApiResponse(responseCode = "400", description = "Dados inválidos fornecidos")
     })
-    @PostMapping("/novo") // alterado de /salvar para /novo para evitar conflito
+    @PostMapping("/novo")
     public ResponseEntity<DadosPessoa> salvar(@Valid @RequestBody Pessoa pessoa, UriComponentsBuilder uriBuilder) {
         Pessoa pessoaSalva = service.salvar(pessoa);
         DadosPessoa dadosPessoa = new DadosPessoa(pessoaSalva);

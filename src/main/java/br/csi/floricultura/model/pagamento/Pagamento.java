@@ -25,6 +25,6 @@ public class Pagamento {
     private Pedido pedido;
 
     @NonNull
-    private String status; // Ex: "Pendente", "Pago", "Cancelado"
+    private String status; //ex: "Pendente", "Pago", "Cancelado"
 
 }

@@ -14,7 +14,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-// CORS - cross-origin resource sharing
 
 @Configuration
 @EnableWebSecurity
@@ -28,32 +27,25 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(crsf -> crsf.disable()) //desabilita alguma coisa = libera endpoint para todos
+                .csrf(crsf -> crsf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                                //endpoint de login - todos
                                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
-                                //endpoint de registro de pessoa
                                 .requestMatchers(HttpMethod.POST, "/pessoa/registrar").permitAll()
-                                //documentaçao do swagger
                                 .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 
-                                //deletes - admin
                                 .requestMatchers(HttpMethod.DELETE).hasAuthority("ROLE_ADMIN")
 
-                                //post e put em pedido e produto - admin
 //                        .requestMatchers(HttpMethod.POST, "/pedido/**", "/produto/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.POST, "/pedido/**", "/produto/**").hasAuthority("ROLE_ADMIN")
 //                        .requestMatchers(HttpMethod.PUT, "/pedido/**", "/produto/**").hasRole("ADMIN")
                                 .requestMatchers(HttpMethod.PUT, "/pedido/**", "/produto/**").hasAnyAuthority("ROLE_ADMIN", "ROLE_USUARIO")
 
-                                //outras requisiçoes - pessoa autenticado
                                 .anyRequest().authenticated()
                 )
-                //executar filtro de token antes do filtro de autenticação do spring
 //                .addFilterBefore(this.filtroToken, UsernamePasswordAuthenticationFilter.class)
                 .addFilterBefore(this.autenticacaoFilter, UsernamePasswordAuthenticationFilter.class)
-                .build(); // sessao nao salvs estado da pessoa, apenas gera token
+                .build();
     }
 
     @Bean

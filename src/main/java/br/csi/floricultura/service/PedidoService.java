@@ -17,7 +17,6 @@ public class PedidoService {
         this.repository = repository;
     }
 
-    // Salvar um novo pedido, associando um usuário
     @Transactional
     public void salvar(Pedido pedido, Pessoa pessoa) {
         if (pedido.getValorTotal() == null) {
@@ -27,11 +26,10 @@ public class PedidoService {
             throw new IllegalArgumentException("Usuário não pode ser nulo");
         }
 
-        pedido.setPessoa(pessoa); // garante que usuario_id não será nulo
+        pedido.setPessoa(pessoa);
         repository.save(pedido);
     }
 
-    // Atualizar um pedido existente
     @Transactional
     public void atualizar(Pedido pedido) {
         Pedido pedidoExistente = repository.findByIdWithProdutos(pedido.getId())
@@ -41,32 +39,26 @@ public class PedidoService {
             throw new IllegalArgumentException("valorTotal não pode ser nulo");
         }
 
-        // Atualiza campos simples
         pedidoExistente.setStatus(pedido.getStatus());
         pedidoExistente.setValorTotal(pedido.getValorTotal());
         pedidoExistente.setDataPedido(pedido.getDataPedido());
 
-        // Atualiza produtos corretamente
         pedidoExistente.getProdutos().clear();
         if (pedido.getProdutos() != null) {
             pedidoExistente.getProdutos().addAll(pedido.getProdutos());
         }
-        // Não precisa chamar save explicitamente, entidade já gerenciada
     }
 
-    // Excluir um pedido
     @Transactional
     public void excluir(Long id) {
         repository.deleteById(id);
     }
 
-    // Listar todos os pedidos com produtos
     @Transactional(readOnly = true)
     public List<Pedido> listar() {
         return repository.findAllWithProdutos();
     }
 
-    // Buscar um pedido por ID com produtos
     @Transactional(readOnly = true)
     public Pedido getPedido(Long id) {
         return repository.findByIdWithProdutos(id).orElse(null);

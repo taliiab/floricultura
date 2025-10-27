@@ -24,14 +24,12 @@ public class PedidoProdutoController {
         this.service = service;
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto/listar */
     @GetMapping("/listar")
     @Operation(summary = "Listar todos os itens de pedidos", description = "Retorna a lista completa de itens de pedidos cadastrados")
     public List<PedidoProduto> listar() {
         return this.service.listar();
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto/{id} */
     @Operation(summary = "Buscar um item de pedido por ID", description = "Busca um item de pedido do banco de acordo com o ID informado")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Item de pedido encontrado",
@@ -43,14 +41,12 @@ public class PedidoProdutoController {
         return this.service.getPedidoProduto(id);
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto/pedido/{pedidoId} */
     @Operation(summary = "Listar itens por pedido", description = "Retorna todos os itens associados a um pedido específico")
     @GetMapping("/pedido/{pedidoId}")
     public List<PedidoProduto> listarPorPedido(@PathVariable Long pedidoId) {
         return this.service.listarPorPedido(pedidoId);
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto */
     @Operation(summary = "Criar um novo item de pedido", description = "Cria um novo item de pedido no banco de dados")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Item criado com sucesso",
@@ -62,14 +58,12 @@ public class PedidoProdutoController {
         this.service.salvar(pedidoProduto);
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto */
     @PutMapping("atualizar")
     @Operation(summary = "Atualizar um item de pedido", description = "Atualiza os dados de um item de pedido existente")
     public void atualizar(@RequestBody PedidoProduto pedidoProduto) {
         this.service.atualizar(pedidoProduto);
     }
 
-    /* http://localhost:8080/floricultura/pedido-produto/{id} */
     @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir um item de pedido por ID", description = "Remove um item de pedido do banco de acordo com o ID informado")
     public void deletar(@PathVariable Long id) {

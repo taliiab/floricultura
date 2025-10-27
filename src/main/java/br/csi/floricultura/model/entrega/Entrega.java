@@ -27,7 +27,7 @@ public class Entrega {
     private LocalDateTime dataEntrega;
 
     @NonNull
-    private String status; // Ex: "Aguardando", "Em Rota", "Entregue", "Cancelada"
+    private String status; //ex: "Aguardando", "Em Rota", "Entregue", "Cancelada"
 
     private String rastreio;
 }

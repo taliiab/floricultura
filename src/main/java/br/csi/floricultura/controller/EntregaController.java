@@ -24,14 +24,12 @@ public class EntregaController {
         this.service = service;
     }
 
-    /* http://localhost:8080/floricultura/entrega/listar */
     @GetMapping("/listar")
     @Operation(summary = "Listar todas as entregas", description = "Retorna a lista completa de entregas cadastradas")
     public List<Entrega> listar() {
         return this.service.listar();
     }
 
-    /* http://localhost:8080/floricultura/entrega/{id} */
     @Operation(summary = "Buscar uma entrega por ID", description = "Busca uma entrega do banco de acordo com o ID informado")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Entrega encontrada",
@@ -43,7 +41,6 @@ public class EntregaController {
         return this.service.getEntrega(id);
     }
 
-    /* http://localhost:8080/floricultura/entrega */
     @Operation(summary = "Criar uma nova entrega", description = "Cria uma nova entrega no banco de dados")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Entrega criada com sucesso",
@@ -55,19 +52,16 @@ public class EntregaController {
         this.service.salvar(entrega);
     }
 
-    /* http://localhost:8080/floricultura/entrega */
     @PutMapping("/atualizar")
     @Operation(summary = "Atualizar uma entrega", description = "Atualiza os dados de uma entrega já cadastrada com base no ID")
     public void atualizar(@RequestBody Entrega entrega) {
         this.service.atualizar(entrega);
     }
 
-    /* http://localhost:8080/floricultura/entrega/{id} */
     @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir uma entrega por ID", description = "Remove uma entrega do banco de acordo com o ID informado")
     public void deletar(@PathVariable Long id) {
         this.service.excluir(id);
     }
-
 
 }

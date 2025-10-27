@@ -36,24 +36,19 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
 
         if (token != null) {
             try {
-                // Pega o subject (usuário/email) do token
                 String subject = this.tokenServiceJWT.getSubject(token);
                 System.out.println("Login: " + subject);
 
-                // Carrega o usuário do banco
                 UserDetails userDetails = this.autenticacaoService.loadUserByUsername(subject);
 
                 if (userDetails != null) {
-                    // Cria o token de autenticação com as authorities do usuário
                     UsernamePasswordAuthenticationToken authenticationToken =
                             new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
 
-                    // Define a autenticação no contexto do Spring Security
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 }
 
             } catch (RuntimeException e) {
-                // Token inválido ou expirado → retorna 401 Unauthorized
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.getWriter().write("Token inválido ou expirado");
                 return;
@@ -66,7 +61,7 @@ public class AutenticacaoFilter extends OncePerRequestFilter {
     private String recuperarToken(HttpServletRequest request) {
         String token = request.getHeader("Authorization");
         if (token != null && token.startsWith("Bearer ")) {
-            return token.substring(7).trim(); // Remove "Bearer "
+            return token.substring(7).trim();
         }
         return null;
     }

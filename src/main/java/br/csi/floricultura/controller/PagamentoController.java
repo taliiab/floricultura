@@ -24,7 +24,6 @@ public class PagamentoController {
         this.service = service;
     }
 
-    /* http://localhost:8080/floricultura/pagamento/listar */
     @GetMapping("/listar")
     @Operation(summary = "Listar todos os pagamentos", description = "Retorna a lista completa de pagamentos cadastrados no sistema")
     @ApiResponses(value = {
@@ -36,7 +35,6 @@ public class PagamentoController {
         return ResponseEntity.ok(pagamentos);
     }
 
-    /* http://localhost:8080/floricultura/pagamento/{id} */
     @GetMapping("/buscar/{id}")
     @Operation(summary = "Buscar pagamento por ID", description = "Retorna um pagamento específico com base no ID informado")
     @ApiResponses(value = {
@@ -51,7 +49,6 @@ public class PagamentoController {
         return ResponseEntity.ok(pagamento);
     }
 
-    /* http://localhost:8080/floricultura/pagamento */
     @PostMapping("/criar")
     @Operation(summary = "Criar um novo pagamento", description = "Cria um novo pagamento no banco de dados")
     @ApiResponses(value = {
@@ -65,7 +62,6 @@ public class PagamentoController {
         return ResponseEntity.status(201).body(p);
     }
 
-    /* http://localhost:8080/floricultura/pagamento */
     @PutMapping("/atualizar/{id}")
     @Operation(summary = "Atualizar um pagamento po ID", description = "Atualiza os dados de um pagamento existente com base no ID")
     @ApiResponses(value = {
@@ -79,7 +75,6 @@ public class PagamentoController {
         return ResponseEntity.ok(p);
     }
 
-    /* http://localhost:8080/floricultura/pagamento/{id} */
     @DeleteMapping("/excluir/{id}")
     @Operation(summary = "Excluir um pagamento por ID", description = "Remove permanentemente um pagamento do banco de dados")
     @ApiResponses(value = {
@@ -92,7 +87,6 @@ public class PagamentoController {
         return ResponseEntity.noContent().build();
     }
 
-    /* http://localhost:8080/floricultura/pagamento/status/{status} */
     @GetMapping("/status/{status}")
     @Operation(summary = "Listar pagamentos por status", description = "Retorna todos os pagamentos que possuem o status informado (ex: Pago, Pendente)")
     @ApiResponses(value = {

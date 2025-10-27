@@ -31,12 +31,6 @@ public class EntregaService {
         this.repository.deleteById(id);
     }
 
-    /*
-        Para atualizar uma entidade do banco é necessário pegar a referência desta
-        entidade e atualizar com os dados que vieram por parâmetro.
-        O save(...) detecta que esse RECURSO já existe no banco de dados pela busca por id,
-        assim ao executar o save com id ele faz um UPDATE.
-     */
     public void atualizar(Entrega entrega) {
         Entrega e = this.repository.getReferenceById(entrega.getId());
         e.setPedido(entrega.getPedido());

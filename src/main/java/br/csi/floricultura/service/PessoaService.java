@@ -22,25 +22,23 @@ public class PessoaService {
     }
 
     public Pessoa salvar(Pessoa pessoa) {
-        // Criptografa a senha antes de salvar
-        pessoa.setSenha(passwordEncoder.encode(pessoa.getSenha()));
+        pessoa.setSenha(passwordEncoder.encode(pessoa.getSenha())); //criptografa a senha antes de salvar
         return repository.save(pessoa);
     }
 
-
     public List<Pessoa> listar() {
         return this.repository.findAll();
-    } //lista pessoa
+    }
 
     public Pessoa getPessoa(Long id) {
         return this.repository.findById(id).orElse(null);
-    } //busca pessoa por id
+    }
 
     public void excluir(Long id){
         this.repository.deleteById(id);
-    } //deleta pessoa por id
+    }
 
-    public void atualizar(Pessoa pessoa){ //atulaliza pessoa por id
+    public void atualizar(Pessoa pessoa){
         Pessoa p = this.repository.getReferenceById(pessoa.getId());
         p.setNome(pessoa.getNome());
         p.setCpf(pessoa.getCpf());
@@ -50,7 +48,7 @@ public class PessoaService {
         this.repository.save(p);
     }
 
-    public void atualizarUUID(Pessoa pessoa){ //atualiza pessoa por UUID
+    public void atualizarUUID(Pessoa pessoa){
         Pessoa p = this.repository.findPessoaByUuid(pessoa.getUuid());
         p.setNome(pessoa.getNome());
         p.setCpf(pessoa.getCpf());
@@ -61,20 +59,20 @@ public class PessoaService {
     }
 
 
-    public Pessoa getPessoaUUID(String uuid){ //buscar pessoa pelo UUID (recebe string)
+    public Pessoa getPessoaUUID(String uuid){
         UUID uuidFormatado = UUID.fromString(uuid);
         return this.repository.findPessoaByUuid(uuidFormatado);
     }
 
     public void deletarUUID(String uuid){
-        this.repository.deletePessoaByUuid(UUID.fromString(uuid)); //deleta pessoa pelo UUID (recebe string)
+        this.repository.deletePessoaByUuid(UUID.fromString(uuid));
     }
 
     public Pessoa getPessoaPorCpf(String cpf){
         return this.repository.findPessoaByCpf(cpf);
-    } //busca pessoa pelo cpf
+    }
 
     public Pessoa getPessoaPorEmail(String email){
-        return this.repository.findPessoaByEmail(email); //busca pessoa por email
+        return this.repository.findPessoaByEmail(email);
     }
 }

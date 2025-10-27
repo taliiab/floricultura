@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface PagamentoRepository extends JpaRepository<Pagamento, Long> {
 
-    // Busca pagamento por status (ex: "Pago", "Pendente")
     List<Pagamento> findAllByStatus(String status);
 
 }

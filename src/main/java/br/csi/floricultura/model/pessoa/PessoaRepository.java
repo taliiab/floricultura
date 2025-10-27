@@ -7,10 +7,11 @@ import java.util.UUID;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
-    Pessoa findPessoaByUuid(UUID uuid); //busca pessoa por UUID
-    void deletePessoaByUuid(UUID uuid); //deleta pessoa por UUID
+    Pessoa findPessoaByUuid(UUID uuid);
 
-    Pessoa findPessoaByCpf(String cpf); //busca pessoa por cpf
+    void deletePessoaByUuid(UUID uuid);
 
-    Pessoa findPessoaByEmail(String email); //busca pessoa por email
+    Pessoa findPessoaByCpf(String cpf);
+
+    Pessoa findPessoaByEmail(String email);
 }

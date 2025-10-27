@@ -27,17 +27,16 @@ public class RestExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
 
-        // cria um mapa para guardar os erros (campo -> mensagem)
+
         Map<String, String> errors = new HashMap<>();
 
-        // passa sobre todos os erros de campo da exceção
+
         ex.getBindingResult().getAllErrors().forEach((error) -> {
-            String fieldName = ((FieldError) error).getField(); // nome
-            String errorMessage = error.getDefaultMessage(); // mensagem
-            errors.put(fieldName, errorMessage); // add ao mapa
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
         });
 
-        // retorna o mapa com status 400
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 }

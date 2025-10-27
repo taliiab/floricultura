@@ -45,7 +45,6 @@ public class PedidoController {
     @PostMapping("/criar")
     @Operation(summary = "Criar um novo pedido")
     public void salvar(@RequestBody Pedido pedido, @AuthenticationPrincipal Pessoa usuarioLogado) {
-        // Passa o usuário logado para o serviço
         service.salvar(pedido, usuarioLogado);
     }
 
