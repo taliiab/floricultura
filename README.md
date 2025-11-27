@@ -1,3 +1,6 @@
+### !!! NECESSIDADE DE ALTERAÇÕES EM TODAS AS PORTAS 8081 PARA 8082 !!!
+Em derrorência aos critérios de entrega do front-end, é necessário essa alterações, pois o back-end já estava rodando na porta 8081.
+
 # 🌸 Sistema de Floricultura
 
 ## 📝 Descrição do Sistema
